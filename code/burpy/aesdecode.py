@@ -24,7 +24,7 @@ class Burpy:
         获取连接的手机
         :return:
         """
-        for x in frida.get_device_manager().enumerate_devices:
+        for x in frida.get_device_manager().enumerate_devices():
             if "Local Socket" in x.name:
                 return x
 
