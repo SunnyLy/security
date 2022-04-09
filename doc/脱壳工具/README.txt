@@ -10,10 +10,15 @@
 
 4、drizzleDumper:
       一个在linux下的脱壳工具，需要手机Root,使用步骤：
-     a)、将drizzleDumple push到手机某一目录下，比如：
-           adb push drizzleDumple64 /data/local/tmp
-           adb shell "chmod 777 /data/local/tmp/drizzleDumple64"
+     a)、将drizzleDumper push到手机某一目录下，比如：
+           adb push drizzleDumper64 /data/local/tmp
+           adb shell "chmod 777 /data/local/tmp/drizzleDumper64"
            接下来开始执行命令进行脱壳
            adb shell
-           ./data/local/tmp/drizzleDumple64 <应用包名>
-           这时窗口会进入等待状态，此里需要用户在手机上打开对应应用。drizzleDumple工具才会Hook到对应进程。
+           ./data/local/tmp/drizzleDumper64 <应用包名>
+           这时窗口会进入等待状态，此里需要用户在手机上打开对应应用。drizzleDumper工具才会Hook到对应进程。
+
+5、xapkdetector:
+        一个apk/dex等壳检测工具
+        a)、github:https://github.com/horsicq/XAPKDetector
+        b)、知乎：https://zhuanlan.zhihu.com/p/310665648
