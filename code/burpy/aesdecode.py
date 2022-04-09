@@ -62,6 +62,30 @@ class Burpy:
 
         return header, body
 
+    def dec(self, header, body):
+        """
+        解密
+        :param header:
+        :param body:
+        :return:
+        """
+        if body.startswith('{'):  # 请求体是json
+            body = eval(body)
+            print(body)
+            password = body["password"]
+            username = body["username"]
+            # 然后调用js中的方法进行加密处理
+            password = self.rpc.dec(password)
+            username = self.rpc.dec(username)
+            # 再将修改后的值放到json中
+            body["password"] = password
+            body["username"] = username
+            body = str(body).replace("\'", "\"")
+        else:
+            body = self.rpc.dec(body)
+
+        return header, body
+
 
 def main(self, header, body):
     print
